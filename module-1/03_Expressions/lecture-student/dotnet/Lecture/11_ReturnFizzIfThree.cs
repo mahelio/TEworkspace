@@ -7,9 +7,26 @@
             if the parameter is 3 and returns an empty string for anything else.
             TOPIC: Conditional Logic
         */
+
         public string ReturnFizzIfThree(int number)
         {
-            return null;
+
+            string output = "";
+
+            if (number == 3)
+            {
+                output = "Fizz";
+            }
+            return output;
+            /*
+            if (number == 3)
+            {
+                string fizz = "Fizz";
+                return fizz;
+            } else
+            return "";
+        }
+        */
+            // return null;
         }
     }
-}

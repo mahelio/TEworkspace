@@ -10,7 +10,8 @@
         */
         public string ReturnAdultOrMinor(int number)
         {
-            if (true)
+            // number >= 18
+            if (number == 18 || number > 18)
             {
                 return "Adult";
             }

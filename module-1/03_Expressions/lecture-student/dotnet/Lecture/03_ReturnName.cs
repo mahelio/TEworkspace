@@ -9,7 +9,9 @@
         */
         public string ReturnName()
         {
-            return null;
+            return "weird name anything";
         }
     }
 }
+
+

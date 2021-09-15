@@ -9,9 +9,12 @@
         */
         public bool ReturnTrueFromIf()
         {
-            if (true)
+            if (true) //is a boolean value
             {
-                return false;
+                //since this is always 'true'
+                //always run this line
+                //return exists out of method
+                return true;
             }
 
             return false;

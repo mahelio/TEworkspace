@@ -10,14 +10,16 @@
             TOPIC: Conditional Logic
          */
         public string ReturnFizzOrBuzzOrNothing(int number)
+       
         {
+            string output = "";
             if (number == 3)
             {
-                output "Fizz";
+                output = "Fizz";
             }
             else if (number == 5)
             {
-                Output = "Buzz";
+                output = "Buzz";
             } 
             return output;
         }

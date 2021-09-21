@@ -11,7 +11,17 @@
          */
         public bool In3050(int a, int b)
         {
+            bool aIn3040 = (a >= 30) && (a <= 40);
+            bool bIn3040 = (b >= 30) && (b <= 40);
+
+            bool aIn4050 = (a >= 40) && (a <= 50);
+            bool bIn4050 = (b >= 40) && (b <= 50);
+            if ((aIn3040 && bIn3040) || (aIn4050 && bIn4050))
+            {
+                return true;
+            }
             return false;
+
         }
     }
 }

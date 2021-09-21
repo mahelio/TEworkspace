@@ -9,8 +9,12 @@
          NearTen(17) → false
          NearTen(19) → true
          */
-        public bool NearTen(int num)
+        public bool NearTen(int num)//like more20
         {
+            if ((num % 10 >= 8) || (num % 10 <=2 ))
+            {
+                return true;
+            }
             return false;
         }
     }

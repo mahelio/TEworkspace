@@ -13,6 +13,15 @@
          */
         public bool CigarParty(int cigars, bool isWeekend)
         {
+            bool cigarsInRange = (cigars >= 40) && (cigars <= 60);
+            if (!isWeekend && cigarsInRange)
+            {
+                return true;
+            }
+            if (isWeekend && cigars >= 40)
+            {
+                return true;
+            }
             return false;
         }
     }

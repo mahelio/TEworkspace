@@ -11,6 +11,22 @@
          */
         public bool In1To10(int n, bool outsideMode)
         {
+            bool nInRange = (n >= 1) && (n <= 10);
+            if (!outsideMode)
+            {
+                if (nInRange)
+                {
+                    return true;
+                }
+
+            }
+            else //outsideMode
+            {
+                if (n<=1 || n>=10)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

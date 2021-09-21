@@ -10,9 +10,9 @@
          Less20(19) → true
          Less20(20) → false
          */
-        public bool Less20(int n)
+        public bool Less20(int n)//like special11
         {
-            return false;
+            return n % 20 == 19 || n % 20 == 18;
         }
     }
 }

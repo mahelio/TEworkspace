@@ -11,6 +11,16 @@
        */
         public bool PosNeg(int a, int b, bool negative)
         {
+            bool bothNegative = (a < 0) && (b < 0);
+            bool oneIsNegative = ((a < 0) && (b > 0)) || ((a > 0) && (b < 0));
+            if (oneIsNegative && !negative)
+            {
+                return true;
+            }
+            if (bothNegative && negative)
+            {
+                return true;
+            }
             return false;
         }
     }

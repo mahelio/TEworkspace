@@ -11,6 +11,12 @@
          */
         public bool Old35(int n)
         {
+            bool isMltpOf3 = n % 3 == 0;
+            bool isMltpOf5 = n % 5 == 0;
+            if (isMltpOf3 ^ isMltpOf5) //but not both
+            {
+                return true;
+            }
             return false;
         }
     }

@@ -12,9 +12,38 @@
          LuckySum(13, 1, 3) → 3
          LuckySum(13, 13, 3) → 0
          */
-        public int LuckySum(int a, int b, int c)
+        public int LuckySum(int a, int b, int c)//took hours, still dont know how to do. Had help
         {
-            return 0;
+            int startCount = 0;
+            bool unLuckySum = a != 13;
+            if (unLuckySum)
+            {
+                startCount += a;
+            }
+            else
+            {
+                unLuckySum = false;
+            }
+            if (!unLuckySum)
+            {
+                if (b != 13)
+                {
+                    unLuckySum = true;
+                }
+            }
+            else if (unLuckySum && (b != 13))
+            {
+                startCount += b;
+            }
+            else if (unLuckySum && (b == 13))
+            {
+                unLuckySum = false;
+            }
+            if (unLuckySum && (c != 13))
+            {
+                startCount += c;
+            }
+            return startCount;
         }
     }
 }

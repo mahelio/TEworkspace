@@ -9,9 +9,9 @@
          SameFirstLast([1, 2, 3, 1]) → true
          SameFirstLast([1, 2, 1]) → true
          */
-        public bool SameFirstLast(int[] nums)
+        public bool SameFirstLast(int[] nums)//single return method
         {
-            return false;
+            return nums.Length > 0 && nums[0] == nums[nums.Length - 1]; //test whole array is greater then 0 & first and last are equal
         }
     }
 }

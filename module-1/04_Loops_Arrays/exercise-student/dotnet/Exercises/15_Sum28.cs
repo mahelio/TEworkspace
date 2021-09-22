@@ -10,7 +10,15 @@
          */
         public bool Sum28(int[] nums)
         {
-            return false;
+            int sumExact = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if(nums[i] == 2)
+                {
+                    sumExact += 2;
+                }
+            }
+            return sumExact == 8; //if the sum is excatly 8
         }
     }
 }

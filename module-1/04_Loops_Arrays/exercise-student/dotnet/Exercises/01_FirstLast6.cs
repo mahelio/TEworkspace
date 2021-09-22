@@ -11,6 +11,20 @@
          */
         public bool FirstLast6(int[] nums)
         {
+            if (nums.Length == 1)
+            {
+                if (nums[0] == 6)
+                {
+                    return true;
+                }
+            }
+            else //return true if 6 appears as either the first or last element in the array
+            {
+                if (nums[0] == 6 || nums[nums.Length - 1] == 6)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

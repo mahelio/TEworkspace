@@ -14,7 +14,19 @@
          */
         public int Sum13(int[] nums)
         {
-            return 0;
+            int sumSpec = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 13)
+                {
+                    i++;
+                }
+                else
+                {
+                    sumSpec += nums[i];
+                }
+            }
+            return sumSpec;
         }
     }
 }

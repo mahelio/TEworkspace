@@ -9,9 +9,10 @@
          MiddleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
          MiddleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
          */
-        public int[] MiddleWay(int[] a, int[] b)
+        public int[] MiddleWay(int[] a, int[] b) //each array is length 3, we want return 2
         {
-            return new int[] { };
+            int[] midd = { a[1], b[1] };
+            return midd;
         }
     }
 }

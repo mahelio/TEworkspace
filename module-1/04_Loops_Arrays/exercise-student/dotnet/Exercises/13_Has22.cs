@@ -8,8 +8,15 @@
          Has22([1, 2, 1, 2]) → false
          Has22([2, 1, 2]) → false
          */
-        public bool Has22(int[] nums)
+        public bool Has22(int[] nums) //for loop only or for if?
         {
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                if (nums[i] == 2 && nums[i+1] == 2 )
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

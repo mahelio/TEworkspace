@@ -10,9 +10,9 @@
         HasBad("xbadxx") → true
         HasBad("xxbadxx") → false
         */
-        public bool HasBad(string str)
+        public bool HasBad(string str) //seek help
         {
-            return false;
+            return (str.Length >= 3 && str.Substring(0, 3).Equals("bad")) || (str.Length >= 4 && str.Substring(1, 3).Equals("bad"));
         }
     }
 }

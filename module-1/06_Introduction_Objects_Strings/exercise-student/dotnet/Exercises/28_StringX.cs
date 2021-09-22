@@ -11,7 +11,15 @@
         */
         public string StringX(string str)
         {
-            return null;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (i != 0 && i != str.Length - 1 && str[i] == 'x')
+                {
+                    str = str.Remove(i, 1);
+                    i--;
+                }
+            }
+            return str;
         }
     }
 }

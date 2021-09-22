@@ -11,7 +11,20 @@
         */
         public int Last2(string str)
         {
-            return 0;
+            if (str.Length < 2)
+            {
+                return 0;
+            }
+            int count = 0;
+            char lettLast = str[str.Length - 1];
+            char lettSec = str[str.Length - 2];
+            for (int i = 0; i < str.Length - 2; i++)
+            {
+                if (str[i] == lettSec && str[i+1] == lettLast)
+                {
+                    count++;
+                }
+            }return count;
         }
     }
 }

@@ -10,6 +10,13 @@
         */
         public bool DoubleX(string str)
         {
+            if (str.IndexOf("x") != -1)
+            {
+                if ((str.IndexOf("x") != str.Length-1) && str [str.IndexOf("x") + 1] == 'x')
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

@@ -12,6 +12,14 @@
         */
         public string TwoChar(string str, int index)
         {
+            if (str.Length < 3 || index > str.Length -2 || index < 0)
+            {
+                return str.Substring(0, 2);
+            }
+            else
+            {
+                return str.Substring(index, 2); //atleast 2
+            }
             return null;
         }
     }

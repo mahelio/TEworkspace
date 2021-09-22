@@ -10,7 +10,19 @@
         */
         public string AltPairs(string str)
         {
-            return null;
+            string chaMade = "";
+            for (int i = 0; i < str.Length; i+= 4)
+            {
+                if (i < str.Length - 1)
+                {
+                    chaMade += str.Substring(i, 2);
+                }
+                else
+                {
+                    chaMade += str[str.Length - 1];
+                }
+            }
+            return chaMade;
         }
     }
 }

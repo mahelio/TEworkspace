@@ -10,10 +10,10 @@
         MakeOutWord("<<>>", "WooHoo") → "<<WooHoo>>"
         MakeOutWord("[[]]", "word") → "[[word]]"
         */
-        public string MakeOutWord(string outword, string word)
+        public string MakeOutWord(string outword, string word) //starting at i, and up to but no including j
         {
 
-            return null;
+            return outword.Substring(0, 2) + word + outword.Substring(2,2);
         }
     }
 }

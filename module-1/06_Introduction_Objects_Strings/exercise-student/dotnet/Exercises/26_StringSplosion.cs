@@ -10,7 +10,15 @@
         */
         public string StringSplosion(string str)
         {
-            return null;
+            string resultSplod = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int x = 0; x <= i; x++) //new var
+                {
+                    resultSplod += str[x];
+                }
+            }
+            return resultSplod;
         }
     }
 }

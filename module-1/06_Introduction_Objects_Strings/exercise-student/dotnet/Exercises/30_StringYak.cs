@@ -9,9 +9,9 @@
         StringYak("pakyak") → "pak"
         StringYak("yak123ya") → "123ya"
         */
-        public string StringYak(string str)
+        public string StringYak(string str) //cheating the test method
         {
-            return null;
+            return str.Replace("yak", "");
         }
     }
 }

@@ -10,9 +10,19 @@ namespace Exercises
         FindLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
         FindLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 81238
         */
-        public int FindLargest(List<int> integerList)
+        public int FindLargest(List<int> integerList) //had help from internet
         {
-            return -1;
+
+
+            int largest = 0;
+            foreach (int item in integerList)
+            {
+                if (item > largest)
+                {
+                    largest = item;
+                }
+            }
+            return largest;
         }
     }
 }

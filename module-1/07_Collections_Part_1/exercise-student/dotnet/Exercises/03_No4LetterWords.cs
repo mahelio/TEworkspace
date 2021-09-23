@@ -13,7 +13,15 @@ namespace Exercises
         */
         public List<string> No4LetterWords(string[] stringArray)
         {
-            return null;
+            List<string> newList = new List<string>();
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                if (stringArray[i].Length != 4) //words not containing 4 letters
+                {
+                    newList.Add(stringArray[i]);
+                }
+            }
+            return newList;
         }
     }
 }

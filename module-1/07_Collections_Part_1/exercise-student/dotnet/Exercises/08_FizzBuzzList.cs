@@ -16,9 +16,33 @@ namespace Exercises
 
         HINT: To convert an integer x to a string, you can use x.ToString() in your code. For example, if x = 1 then x.ToString() equals "1."
         */
-        public List<string> FizzBuzzList(int[] integerArray)
+        public List<string> FizzBuzzList(int[] integerArray) //study code, dont understand how this works
         {
-            return null;
+            List<string> myList = new List<string>();
+
+            for (int i = 0; i < integerArray.Length; i++)
+            {
+                if (integerArray[i] % 3 == 0 && integerArray[i] % 5 == 0)
+                {
+                    myList.Add("FizzBuzz");
+                }
+                else if (integerArray[i] % 3 == 0)
+                {
+                    myList.Add("Fizz");
+                }
+                else if (integerArray[i] % 5 == 0)
+                {
+                    myList.Add("Buzz");
+                }
+                else
+                {
+                    myList.Add(integerArray[i].ToString());
+                }
+
+
+            }
+
+            return myList;
         }
     }
 }

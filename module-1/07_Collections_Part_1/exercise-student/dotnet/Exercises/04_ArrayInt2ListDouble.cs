@@ -12,7 +12,13 @@ namespace Exercises
         */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
-            return null;
+            double[] inArray = new double[intArray.Length]; //list of doubles
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                inArray[i] = intArray[i] / 2.0;//dont forget its double so 2.0 vs 2
+            }
+            List<double> dList = new List<double>(inArray);
+            return dList;
         }
     }
 }

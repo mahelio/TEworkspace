@@ -21,7 +21,22 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+            Dictionary<string, int> almostDone = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+                int value = 0;
+
+                for (int i = 0; i < word.Length - 1; i++)
+                {
+                    if (word[i] == word[word.Length - 1] && word[i - 1] == word[word.Length - 2])
+                    {
+                        value++;
+                    }
+                }
+                almostDone[word] = value;
+            }
+            return almostDone;
         }
     }
 }

@@ -5,7 +5,9 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         * Given an array of int values, return a Dictionary<int, int> with a key for each int, with the value the
+         * Given an array of int values, return a Dictionary<int, int> 
+         * with a key for each int, 
+         * with the value the
          * number of times that int appears in the array.
          *
          * ** The lesser known cousin of the the classic WordCount **
@@ -17,7 +19,24 @@ namespace Exercises
          */
         public Dictionary<int, int> IntCount(int[] ints)
         {
-            return null;
+            Dictionary<int, int> intDict = new Dictionary<int, int>();
+            for (int i = 0; i < ints.Length; i++)
+            {
+                int value = 1;
+
+                if (!intDict.ContainsKey(ints[i]))
+                {
+                    for (int j = i + 1; j < ints.Length; j++)
+                    {
+                        if (ints[j] == ints[i])
+                        {
+                            value++;
+                        }
+                    }
+                    intDict.Add(ints[i], value);
+                }
+            }
+            return intDict;
         }
     }
 }

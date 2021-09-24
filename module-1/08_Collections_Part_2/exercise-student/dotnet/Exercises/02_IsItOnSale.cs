@@ -28,7 +28,29 @@ namespace Exercises
          */
         public double IsItOnSale(string itemNumber)
         {
-            return -1.0;
+            
+
+            Dictionary<string, double> saleDict = new Dictionary<string, double>();
+            saleDict["KITCHEN4001"] = 0.20;
+            saleDict["GARAGE1070"] = 0.15;
+            saleDict["LIVINGROOM"] = 0.10;
+            saleDict["KITCHEN6073"] = 0.40;
+            saleDict["BEDROOM3434"] = 0.60;
+            saleDict["BATH0073"] = 0.15;
+            double saleAmount = 0.0;
+            foreach (KeyValuePair<string, double> saleItem in saleDict)
+            {
+
+                string checkItem = saleItem.Key;
+
+                if (itemNumber != null && checkItem.ToLower() == itemNumber.ToLower())
+                {
+                    saleAmount = saleDict[checkItem];
+                    break;
+                }
+            }
+            
+            return saleAmount;
         }
     }
 }

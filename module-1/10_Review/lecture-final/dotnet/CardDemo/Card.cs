@@ -12,13 +12,13 @@ namespace CardDemo
         {
             // // needed if the parameter matches the 
             // this.Value = Value;
-            Value = value;
+            ValueOfCard = value;
             Suit = suit;
             
             //Console.WriteLine("creating a new card, neat!");
         }
 
-        public int Value { get; private set; }
+        public int ValueOfCard { get; private set; }
 
         public string Suit { get; private set; }
 
@@ -44,7 +44,7 @@ namespace CardDemo
             get
             {
                 //we can do magic
-                //method
+                //method the value is 'computed' here
                 if (Suit == "spades" || Suit == "clubs")
                 {
                     return "black";
@@ -56,7 +56,33 @@ namespace CardDemo
             }
         }
 
+        public string Face {
+            get
+            {
+                return FaceValues[ValueOfCard];//is actually a key in our dictionary
+            } 
+        }
+
+        public static string Manufacturer { get; } = "Bicycle Card Company";
+
+        public static Dictionary<int, string> FaceValues = new Dictionary<int, string>()
+        {
+            {1,"Ace"},
+            {2,"Two"},
+            {3,"Three"},
+            {4,"Four"},
+            {5,"Five"},
+            {6,"Six"},
+            {7,"Seven"},
+            {8,"Eight"},
+            {9,"Nine"},
+            {10,"Ten"},
+            {11,"Jack"},
+            {12,"Queen"},
+            {13,"King"}, 
+        };
     }
     //
-    //no go zone 
+    //danger zone
+    //
 }

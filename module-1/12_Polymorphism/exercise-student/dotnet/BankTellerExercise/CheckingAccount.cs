@@ -8,12 +8,12 @@ namespace BankTellerExercise
 
         }
 
-        public CheckingAccount(string accountHolder, string accountNumber, decimal balance) : base(accountHolder, accountNumber, balance)
+        public CheckingAccount(string accountHolder, string accountNumber, int balance) : base(accountHolder, accountNumber, balance)
         {
 
         }
 
-        public override decimal Withdraw(decimal amountToWithdraw)
+        public override int Withdraw(int amountToWithdraw)
         {
             // Only allow the withdraw if the balance isn't going to -$100 or below
             if (Balance - amountToWithdraw > -100)

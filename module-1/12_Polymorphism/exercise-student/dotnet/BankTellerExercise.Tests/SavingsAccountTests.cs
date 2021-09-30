@@ -82,21 +82,21 @@ namespace BankTellerExercise.Tests
         [TestMethod]
         public void TransferTest()
         {
-            SavingsAccount source = new SavingsAccount("", "", 50M);
+            SavingsAccount source = new SavingsAccount("", "", 50);
             SavingsAccount destination = new SavingsAccount("", "");
 
             MethodInfo method = type.GetMethod("TransferTo");
 
-            object[] methodParameters = new object[] { destination, 24M };
+            object[] methodParameters = new object[] { destination, 24 };
 
             method.Invoke(source, methodParameters);
 
             object newSourceBalance = GetPropertyValue(source, "Balance");
 
             // We lose $2 on fees
-            Assert.AreEqual(24M, newSourceBalance);
-            Assert.AreEqual(24M, destination.Balance);
-            Assert.AreEqual(24M, source.Balance);
+            Assert.AreEqual(24, newSourceBalance);
+            Assert.AreEqual(24, destination.Balance);
+            Assert.AreEqual(24, source.Balance);
         }
         private object GetPropertyValue(object instance, string propName)
         {

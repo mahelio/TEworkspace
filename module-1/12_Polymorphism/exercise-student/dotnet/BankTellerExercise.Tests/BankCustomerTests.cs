@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Reflection;
-
+//switched decimal to int!!!
 namespace BankTellerExercise.Tests
 {
     [TestClass]
@@ -122,7 +122,7 @@ namespace BankTellerExercise.Tests
             sav.Deposit(15000);
 
             MethodInfo chargeMethod = ccType.GetMethod("Charge");
-            chargeMethod.Invoke(cc, new object[] { 5000M });
+            chargeMethod.Invoke(cc, new object[] { 5000 });
 
             object isVipValue = GetPropertyValue(customer, "IsVip");
 
@@ -187,7 +187,7 @@ namespace BankTellerExercise.Tests
             sav.Deposit(15000);
 
             MethodInfo chargeMethod = ccType.GetMethod("Charge");
-            chargeMethod.Invoke(cc, new object[] { 5001M });
+            chargeMethod.Invoke(cc, new object[] { 5001 });
 
             object isVipValue = GetPropertyValue(customer, "IsVip");
 

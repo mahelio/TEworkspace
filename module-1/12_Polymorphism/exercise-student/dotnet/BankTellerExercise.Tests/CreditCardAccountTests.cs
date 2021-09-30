@@ -37,13 +37,13 @@ namespace BankTellerExercise.Tests
 
             MethodInfo method = type.GetMethod("Pay");
 
-            object[] methodParameters = new object[] { 25M };
+            object[] methodParameters = new object[] { 25 };
 
             method.Invoke(ccAccount, methodParameters);
 
             object debtAmt = GetPropertyValue(ccAccount, "Debt");
 
-            Assert.AreEqual(-25M, debtAmt);
+            Assert.AreEqual(-25, debtAmt);
         }
 
         [TestMethod]
@@ -53,13 +53,13 @@ namespace BankTellerExercise.Tests
 
             MethodInfo method = type.GetMethod("Charge");
 
-            object[] methodParameters = new object[] { 25M };
+            object[] methodParameters = new object[] { 25 };
 
             method.Invoke(ccAccount, methodParameters);
 
             object debt = GetPropertyValue(ccAccount, "Debt");
 
-            Assert.AreEqual(25M, debt);
+            Assert.AreEqual(25, debt);
         }
 
         [TestMethod]
@@ -69,15 +69,15 @@ namespace BankTellerExercise.Tests
 
             MethodInfo method = type.GetMethod("Charge");
 
-            object[] methodParameters = new object[] { 500M };
+            object[] methodParameters = new object[] { 500 };
 
             method.Invoke(ccAccount, methodParameters);
 
             object debt = GetPropertyValue(ccAccount, "Debt");
             object balance = GetPropertyValue(ccAccount, "Balance");
 
-            Assert.AreEqual(500M, debt);
-            Assert.AreEqual(-500M, balance);
+            Assert.AreEqual(500, debt);
+            Assert.AreEqual(-500, balance);
         }
 
         private object GetPropertyValue(object instance, string propName)

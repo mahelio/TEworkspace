@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Reflection;
-
+//switched decimal to int!!
 namespace BankTellerExercise.Tests
 {
     [TestClass]
@@ -59,15 +59,15 @@ namespace BankTellerExercise.Tests
 
             MethodInfo method = type.GetMethod("TransferTo");
 
-            object[] methodParameters = new object[] { destination, 24M };
+            object[] methodParameters = new object[] { destination, 24 };
 
             method.Invoke(source, methodParameters);
 
             object newSourceBalance = GetPropertyValue(source, "Balance");
 
-            Assert.AreEqual(26M, newSourceBalance);
-            Assert.AreEqual(24M, destination.Balance);
-            Assert.AreEqual(26M, source.Balance);
+            Assert.AreEqual(26, newSourceBalance);
+            Assert.AreEqual(24, destination.Balance);
+            Assert.AreEqual(26, source.Balance);
         }
 
         private object GetPropertyValue(object instance, string propName)

@@ -1,10 +1,10 @@
 ﻿namespace BankTellerExercise
 {
-    public class BankAccount
+    public class BankAccount : IAccountable //switching decimal to int bc int was working and decimal was not
     {
         public string AccountHolderName { get; private set; }
         public string AccountNumber { get; }
-        public decimal Balance { get; private set; }
+        public int Balance { get; private set; }
 
         public BankAccount(string accountHolder, string accountNumber)
         {
@@ -13,22 +13,28 @@
             Balance = 0;
         }
 
-        public BankAccount(string accountHolder, string accountNumber, decimal balance)
+        public BankAccount(string accountHolder, string accountNumber, int balance)
         {
             AccountHolderName = accountHolder;
             AccountNumber = accountNumber;
             Balance = balance;
         }
 
-        public decimal Deposit(decimal amountToDeposit)
+        public int Deposit(int amountToDeposit)
         {
             Balance += amountToDeposit;
             return Balance;
         }
 
-        public virtual decimal Withdraw(decimal amountToWithdraw)
+        public virtual int Withdraw(int amountToWithdraw)
         {
             Balance -= amountToWithdraw;
+            return Balance;
+        }
+        public virtual int TransferTo(BankAccount destinationAccount, int transferAmount)
+        {
+            Withdraw(transferAmount);
+            destinationAccount.Balance += transferAmount;
             return Balance;
         }
     }

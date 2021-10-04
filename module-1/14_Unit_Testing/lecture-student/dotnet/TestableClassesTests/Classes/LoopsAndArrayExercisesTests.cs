@@ -13,7 +13,27 @@ namespace TestableClasses.Classes.Tests
         //.AreNotEqual() - Opposite of AreEqual
         //.AreNotEquilavent() - Opposite or AreEqualivent
         //.Contains() - Checks to see if collection contains a value/object
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            /*
+             * 
+             * Arrange
+             * Act
+             * Assert
+             */
+            ///Arrange
+            LoopsAndArrayExercises loopsAndArrayExercises = new LoopsAndArrayExercises();
+            int[] firstParameter = { 1, 2, 3 };
+            int[] secondParameter = { 4, 5, 6 };
 
+            ///act
+            int[] actual = loopsAndArrayExercises.MiddleWay(firstParameter, secondParameter);
+            int[] expected = { 2, 5 };
+            ///assert
+            CollectionAssert.AreEqual(expected, actual);
+
+        }
 
     }
 }

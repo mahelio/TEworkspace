@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Assessment
 {
-    class Program
+   public class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+        {   //call csc like in the capstone
+            string fileName = "CarInput.csv";
+            using StreamReader streamReader = new StreamReader($"{Environment.CurrentDirectory}\\{fileName}");
+            Dictionary<string, Car> carClass = new Dictionary<string, Car>();
+            
         }
     }
 }

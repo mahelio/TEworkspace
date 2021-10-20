@@ -74,7 +74,8 @@ namespace USCitiesAndParks.DAO
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO city (city_name, state_abbreviation, population, area) " +
                                                 "OUTPUT INSERTED.city_id " +
-                                                "VALUES (@city_name, @state_abbreviation, @population, @area);", conn);
+                                                "VALUES (@city_name, @state_abbreviation, @population, @area);" +
+                                                "", conn);
                 cmd.Parameters.AddWithValue("@city_name", city.CityName);
                 cmd.Parameters.AddWithValue("@state_abbreviation", city.StateAbbreviation);
                 cmd.Parameters.AddWithValue("@population", city.Population);

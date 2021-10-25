@@ -63,7 +63,7 @@ namespace HotelApp
                 }
                 else if (menuSelection == 6)
                 {
-                    PrintCity(GetCincinnati());
+                   PrintCity(GetCincinnati());
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace HotelApp
             Console.WriteLine("--------------------------------------------");
             foreach (Hotel hotel in hotels)
             {
-                Console.WriteLine(hotel.HotelId + ": " + hotel.Name); ;
+                Console.WriteLine(hotel.HotelID + ": " + hotel.Name); ;
             }
         }
 
@@ -134,7 +134,7 @@ namespace HotelApp
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Hotel Details");
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine(" Id: " + hotel.HotelId);
+            Console.WriteLine(" Id: " + hotel.HotelID);
             Console.WriteLine(" Name: " + hotel.Name);
             Console.WriteLine(" Stars: " + hotel.Stars);
             Console.WriteLine(" Rooms Available: " + hotel.RoomsAvailable);

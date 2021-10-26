@@ -114,18 +114,9 @@ namespace HotelApp
             request.AddJsonBody(reservationToUpdate);
             IRestResponse<Reservation> response = client.Put<Reservation>(request);
 
-            if (response.ResponseStatus != ResponseStatus.Completed)
-            {
-                throw new Exception("Error occurred - unable to reach server.", response.ErrorException);
-            }
-            else if (!response.IsSuccessful)
-            {
-                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
-            }
-            else
-            {
-                return response.Data;
-            }
+            HandleResponse(response);
+            return response.Data;
+            
         }
 
         public bool DeleteReservation(int reservationId)
@@ -134,6 +125,13 @@ namespace HotelApp
             RestRequest request = new RestRequest(API_URL + "reservations/" + reservationId);
             IRestResponse response = client.Delete(request);
 
+            HandleResponse(response);
+            return true;
+            
+        }
+
+        private void HandleResponse(IRestResponse response)
+        {
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
                 throw new Exception("Error occurred - unable to reach server.", response.ErrorException);
@@ -141,10 +139,6 @@ namespace HotelApp
             else if (!response.IsSuccessful)
             {
                 throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
-            }
-            else
-            {
-                return true;
             }
         }
     }

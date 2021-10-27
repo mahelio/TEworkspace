@@ -45,15 +45,16 @@ namespace HotelReservations.DAO
 
         public List<Reservation> FindByHotel(int hotelId)
         {
-            List<Reservation> matched = new List<Reservation>();
-            foreach (Reservation r in Reservations)
-            {
-                if (r.HotelId == hotelId)
-                {
-                    matched.Add(r);
-                }
-            }
-            return matched;
+            //List<Reservation> matched = new List<Reservation>();
+            //foreach (Reservation r in Reservations)
+            //{
+            //    if (r.HotelId == hotelId)
+            //    {
+            //        matched.Add(r);
+            //    }
+            //}
+            return Reservations.Where(r => r.Id == hotelId).ToList();
+            //return Reservation.;
         }
 
         public Reservation Create(Reservation reservation)

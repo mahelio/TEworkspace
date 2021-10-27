@@ -11,22 +11,31 @@ namespace AuctionApp
 
         public List<Auction> GetAllAuctions()
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest(API_URL);
+            IRestResponse<List<Auction>> auctions = client.Get<List<Auction>>(request);
+            return auctions.Data;
         }
 
         public Auction GetDetailsForAuction(int auctionId)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"/{auctionId}");
+            IRestResponse<Auction> auctions = client.Get<Auction>(request);
+            return auctions.Data;
         }
 
         public List<Auction> GetAuctionsSearchTitle(string searchTitle)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"?title_like={searchTitle}");
+            IRestResponse<List<Auction>> auctions = client.Get<List<Auction>>(request);
+            return auctions.Data;
+
         }
 
         public List<Auction> GetAuctionsSearchPrice(double searchPrice)
         {
-            throw new System.NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"?currentBid_lte={searchPrice}");
+            IRestResponse<List<Auction>> auctions = client.Get<List<Auction>>(request);
+            return auctions.Data;
         }
     }
 }

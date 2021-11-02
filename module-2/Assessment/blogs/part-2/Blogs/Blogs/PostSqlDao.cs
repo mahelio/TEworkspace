@@ -17,7 +17,29 @@ namespace Blogs
         {
             // Implement this method to pull in all posts from database
 
-            return null;
+            List<Post> posts = new List<Post>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sqlQuery = "SELECT id, name, body, published, created FROM posts;";
+                    SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Id = Convert.ToInt32(reader["id"]),
+                        //where i stopped
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
         }
 
         public void Save(Post newPost)

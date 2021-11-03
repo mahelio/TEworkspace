@@ -146,15 +146,26 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
-
+                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    throw new UnauthorizedException("Please login and retry your request");
+                }
+                if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                {
+                    throw new ForbiddenException("The action you have requested is forbidden");
+                }
+                throw new NonSuccessException((int)response.StatusCode);
             }
         }
 
         public ApiUser Login(string submittedName, string submittedPass)
         {
 
-
-            IRestResponse<ApiUser> response = null;
+            LoginUser loginUser = new LoginUser { Username = submittedName, Password = submittedPass };
+            RestRequest request = new RestRequest(API_BASE_URL + "login");
+            request.AddJsonBody(loginUser);
+            IRestResponse<ApiUser> response = client.Post<ApiUser>(request);
+                
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {

@@ -58,7 +58,7 @@ namespace HotelReservations.DAO
 
         public Reservation Create(Reservation reservation)
         {
-            int maxId = Reservations.Max(r => r.Id) ?? 0;
+            int maxId = Reservations.Max(r => r.Id)  ?? 0;
             reservation.Id = maxId + 1;
             Reservations.Add(reservation);
             return reservation;

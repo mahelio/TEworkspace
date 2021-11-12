@@ -43,7 +43,8 @@ namespace USCitiesAndParks.Tests
         [TestMethod]
         public void GetParksByState_ReturnsEmptyListForAbbreviationNotInDb()
         {
-            Assert.Fail();
+            IList<park> parks = dao.GetParksByState("BQ");
+            Assert.AreEqual(0, parks.Count);
         }
 
         [TestMethod]

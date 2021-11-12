@@ -4,7 +4,7 @@ using EmployeeProjects.DAO;
 using EmployeeProjects.Models;
 
 namespace EmployeeProjects.Tests.DAO
-{
+{   //I you dont understand question format, ask Now!
     [TestClass]
     public class DepartmentSqlDaoTests : BaseDaoTests
     {
@@ -31,7 +31,7 @@ namespace EmployeeProjects.Tests.DAO
             Assert.IsNotNull(department, "GetDepartment returned null");
             AssertDepartmentsMatch(DEPARTMENT_2, department, "GetDepartment returned wrong or partial data");
         }
-
+           
         [TestMethod]
         public void GetDepartment_ReturnsNullWhenIdNotFound()
         {

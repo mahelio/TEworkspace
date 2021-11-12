@@ -22,12 +22,15 @@ namespace USCitiesAndParks.DAO
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT city_id, city_name, state_abbreviation, population, area FROM city WHERE city_id = @city_id;", conn);
+
+                //parameterized query, prevent sql injection attacks
                 cmd.Parameters.AddWithValue("@city_id", cityId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
+                    //only expects one row
                     city = CreateCityFromReader(reader);
                 }
             }
@@ -48,6 +51,7 @@ namespace USCitiesAndParks.DAO
 
                 while (reader.Read())
                 {
+                    //loop through records 
                     City city = CreateCityFromReader(reader);
                     cities.Add(city);
                 }
@@ -109,7 +113,7 @@ namespace USCitiesAndParks.DAO
         private City CreateCityFromReader(SqlDataReader reader)
         {
             City city = new City();
-            city.CityId = Convert.ToInt32(reader["city_id"]);
+            city.CityId = Convert.ToInt32(reader["city_id"]); //key = column
             city.CityName = Convert.ToString(reader["city_name"]);
             city.StateAbbreviation = Convert.ToString(reader["state_abbreviation"]);
             city.Population = Convert.ToInt32(reader["population"]);

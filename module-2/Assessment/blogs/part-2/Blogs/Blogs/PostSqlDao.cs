@@ -32,7 +32,7 @@ namespace Blogs
                     while (reader.Read())
                     {
                         Id = Convert.ToInt32(reader["id"]),
-                        //where i stopped
+                        //where time ran out
                     }
                 }
             }

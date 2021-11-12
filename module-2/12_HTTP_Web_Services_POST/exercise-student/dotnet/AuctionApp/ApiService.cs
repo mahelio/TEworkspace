@@ -108,7 +108,7 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
-                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+                throw new Exception("Error occurred - received unsuccessful response: " + (int)response.StatusCode);
             }
             else
             {
@@ -129,7 +129,7 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
-                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+                throw new Exception("Error occurred - received unsuccessful response: " + (int)response.StatusCode);
             }
             else
             {
@@ -149,7 +149,7 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
-                throw new Exception("Error occurred - received non-success response: " + (int)response.StatusCode);
+                throw new Exception("Error occurred - received unsuccessful response: " + (int)response.StatusCode);
             }
             else
             {

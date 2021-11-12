@@ -1,0 +1,19 @@
+header{
+    grid-area: header;
+}
+
+#menu-nav{
+    grid-area: menu-nav;
+}
+
+.container > main{
+    grid-area: main;
+}
+
+aside#upcoming-events{
+    grid-area: aside;
+}
+
+footer{
+    grid-area: footer;
+}
